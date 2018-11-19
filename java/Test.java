@@ -7,7 +7,7 @@ public class Test {
     static final Logger rootLogger = LogManager.getRootLogger();
     static final Logger hobbyLogger = LogManager.getLogger(Hobby.class);
 
-    public static void main (String[] args) {
+    public static void main (String[] args) throws HobbyException{
 
         Hobby hobby1 = new Hobby();
 
@@ -25,9 +25,11 @@ public class Test {
 
         Hobby hobby3 = new Hobby(activity);
 
-        hobby1.tellAboutHobby();
-        hobby2.tellAboutHobby();
-        hobby3.tellAboutHobby();
+        hobby1.tellAboutHobby(1);
+        hobby2.tellAboutHobby(2);
+        hobby3.tellAboutHobby(3);
+
+        hobby1.f();
 
         hobbyLogger.info(hobby1.getName());
         hobbyLogger.info(hobby2.getNMembers());

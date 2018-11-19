@@ -167,8 +167,9 @@ public class Hobby {
     }
 
     /** Output information about hobby */
-    public void tellAboutHobby() {
+    public void tellAboutHobby(int a) throws HobbyException {
 
+        if (a < 0) throw new HobbyException();
         System.out.println("\n--> Hobby number: "        +   this.number);
         System.out.println("--> Activity now: "          +   this.activity);
         System.out.println("--> Quantity of members: "   +   this.nMembers);
@@ -179,6 +180,15 @@ public class Hobby {
         System.out.println("--> Price per month: "       +   this.price);
         System.out.println("--> Total in dollars: "      +   this.sum);
 
+    }
+
+    public void f() {
+        try {
+            tellAboutHobby(10);
+        }
+        catch (HobbyException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
