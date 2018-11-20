@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Hobby {
+public abstract class Hobby {
 
     private	byte 	number;		// hobby number
     private	boolean activity;	// hobby activity at the moment
@@ -167,20 +167,7 @@ public class Hobby {
     }
 
     /** Output information about hobby */
-    public void tellAboutHobby(int a) throws HobbyException {
-
-        if (a < 0) throw new HobbyException();
-        System.out.println("\n--> Hobby number: "        +   this.number);
-        System.out.println("--> Activity now: "          +   this.activity);
-        System.out.println("--> Quantity of members: "   +   this.nMembers);
-        System.out.println("--> Region symbol: "         +   this.region);
-        System.out.println("--> Hobby's name: "          +   this.name);
-        System.out.println("--> Everage activity time: " +   this.hours);
-        System.out.println("--> Total time of members: " +   this.tHours);
-        System.out.println("--> Price per month: "       +   this.price);
-        System.out.println("--> Total in dollars: "      +   this.sum);
-
-    }
+    public abstract void tellAboutHobby(int a) throws HobbyException;
 
     public void f() {
         try {
