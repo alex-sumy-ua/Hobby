@@ -9,8 +9,10 @@ public class Test {
 
     public static void main (String[] args) throws HobbyException{
 
+        // Create hobby-1
         Football football1 = new Football();
 
+        // Create hobby-2
         byte    number      = 1;                // number
         boolean activity    = true;             // activity
         short   nMembers    = 12;               // quantity of members
@@ -25,14 +27,11 @@ public class Test {
         Football football2 = new Football(number, activity, nMembers, region, name,
                                           clubName, owner, hours, tHours, price, sum);
 
+        // Create hobby-3
         Fishing fishing1 = new Fishing((byte)3, true, (short)36, 'K', "Shark",
                                        "Rabinovich", "Blue Lake", 56, 1024L,
                                        28F, 1000586D);
 
-//        football1.tellAboutHobby(1);
-//        football2.tellAboutHobby(2);
-
-//        football1.f();
         hobbyLogger.info(football1.getName());
         hobbyLogger.info(football2.getNMembers());
         rootLogger.info("Root Logger: "  + football2.getActivity());
